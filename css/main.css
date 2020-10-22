@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+	--background-g1: hsl(6, 100%, 80%);
+	--background-g2: hsl(335, 100%, 65%);
+	--pale-blue: hsl(243, 100%, 93%);
+	--grayish-blue: hsl(229, 7%, 55%);
+	--dark-blue: hsl(228, 56%, 26%);
+	--very-dark-blue: hsl(229, 57%, 11%);
+}
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	background-image: url("../images/bg-desktop.png");
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-color: var(--very-dark-blue);
+}
+main {
+	place-self: center;
+	margin: 0 auto;
+}
+.container {
+	display: flex;
+}
+.actions {
+	background: var(--dark-blue);
+	padding: 2em 7em 2em 2em;
+	border-radius: 10px 100px 10px 10px;
+	width: fit-content;
+}
+.icons {
+	margin-top: 1.5em;
+}
+.icon {
+	margin-right: 1em;
+	padding: 0.7em;
+	background: var(--very-dark-blue);
+	vertical-align: middle;
+	display: inline-flex;
+	height: 3em;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+}
+.icon img {
+	place-self: center;
+}
+.info {
+	margin-left: 2em;
+	background-color: var(--dark-blue);
+	padding: 1em 3em 4em 3em;
+	height: 100%;
+	place-self: flex-end;
+	border-radius: 10px;
+	font-family: "Raleway", sans-serif;
+	color: #ffffff;
+	font-weight: 400;
+	font-size: 14px;
+}
+.info progress {
+	appearance: none;
+	width: 100%;
+	position: relative;
+}
+.info progress::before {
+	content: " ";
+	position: absolute;
+	border: 6px solid;
+	border-radius: 50%;
+	right: 18.5%;
+	margin: 1px;
+}
+.info progress::-webkit-progress-bar {
+	background-color: hsl(229deg 57% 11% / 50%);
+	border-radius: 7px;
+	padding: 2px;
+}
+.info progress::-webkit-progress-value {
+	background: rgb(255, 77, 151);
+	background: linear-gradient(
+		270deg,
+		rgba(255, 77, 151, 1) 0%,
+		rgba(255, 163, 153, 1) 100%
+	);
+	border-radius: 7px;
+}
+.info progress::-moz-progress-bar {
+	background-color: hsl(229deg 57% 11% / 50%);
+	border-radius: 7px;
+	padding: 2px;
+}
+.limits {
+	display: flex;
+}
+.limits .end {
+	margin-left: auto;
+}
+.quota {
+	display: flex;
+}
+.quota .tooltip {
+	width: 200px;
+	position: relative;
+}
+.tooltip::before {
+	content: " ";
+	position: absolute;
+	right: 0;
+	margin-left: -5px;
+	border-width: 15px;
+	border-style: solid;
+	border-color: #ffffff #ffffff transparent transparent;
+}
+.tooltip p {
+	position: absolute;
+	right: 0;
+	background: #ffffff;
+	top: calc(-100% + 2px);
+	padding: 1em;
+	margin-top: -1em;
+	color: var(--grayish-blue);
+	border-radius: 10px;
+	border: 1px solid transparent;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 12px;
+}
+.tooltip strong {
+	font-size: 2rem;
+	color: var(--very-dark-blue);
+	vertical-align: middle;
+}
+@media all and (max-width: 900px) {
+	body {
+		background-image: url("../images/bg-mobile.png");
+		background-position: center;
+		background-size: 100%;
+	}
+	.container {
+		flex-direction: column;
+		position: relative;
+	}
+	.actions {
+		width: auto;
+	}
+	.info {
+		margin-top: 2em;
+		margin-left: 0;
+		padding: 1em 3.5em 4em 3.5em;
+	}
+	.info .tooltip {
+		width: auto;
+		position: initial;
+	}
+	.tooltip::before {
+		content: none;
+	}
+	.tooltip p {
+		top: unset;
+		right: unset;
+		left: calc(50% - 5.5em);
+		bottom: 0;
+		padding: 1em;
+		margin: 0;
+		margin-bottom: -2em;
+	}
+}
