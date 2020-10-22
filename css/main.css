@@ -13,10 +13,11 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	background-image: url("../images/bg-desktop.png");
+	background-image: url(../images/bg-desktop.png);
 	background-repeat: no-repeat;
-	background-position: bottom;
+	background-size: 100% 50%;
 	background-color: var(--very-dark-blue);
+	background-position: center bottom;
 }
 main {
 	place-self: center;
